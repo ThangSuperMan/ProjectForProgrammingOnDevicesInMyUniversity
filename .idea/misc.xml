@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/button.xml" value="0.1575" />
+        <entry key="app/src/main/res/drawable/button_explore_nearby_stays.xml" value="0.209" />
+        <entry key="app/src/main/res/drawable/button_login.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/button_where_are_you_going.xml" value="0.143" />
+        <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.191" />
+        <entry key="app/src/main/res/drawable/search_button.xml" value="0.148" />
+        <entry key="app/src/main/res/drawable/tour_image_cell_rounded.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_detail_tour.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_home_screen.xml" value="0.39798458625973293" />
+        <entry key="app/src/main/res/layout/activity_login_screen.xml" value="0.2835396808126698" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.12273550724637682" />
+        <entry key="app/src/main/res/layout/activity_tour_screen.xml" value="0.13994565217391305" />
+        <entry key="app/src/main/res/layout/activity_welcome_screen.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/tour_cell.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

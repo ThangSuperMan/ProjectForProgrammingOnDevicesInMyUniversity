@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".WelcomeScreenActivity">
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="350dp"
+        android:src="@drawable/banner_login" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#0d6e6a"
+        android:text="Welcome"
+        android:textStyle="bold"
+        android:textSize="45dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create a new account"
+        android:textColor="#0d6e6a"
+        android:textStyle="bold"
+        android:textSize="16dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:background="@drawable/button_login"
+        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="Login"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:background="?android:attr/selectableItemBackground"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:background="@drawable/button_login"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/button_register"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:text="Register"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:background="?android:attr/selectableItemBackground"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>
