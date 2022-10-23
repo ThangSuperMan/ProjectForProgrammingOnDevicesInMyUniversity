@@ -4,17 +4,24 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class TourScreenActivity extends AppCompatActivity {
-    String tourTitles[] = { "Tour 1", "Tour 2"};
-    int tourImages[] = { R.drawable.tour1, R.drawable.tour2,R.drawable.tour1, R.drawable.tour2, R.drawable.tour2 };
+public class TourActivity extends AppCompatActivity {
+    String tourTitles[] = { "Vaala, Finland", "Enonkoski, Finland", "Calaca, Philippin", "Canada Dream"};
+    int tourImages[] = { R.drawable.tour1, R.drawable.tour2, R.drawable.tour3, R.drawable.tour4 };
+    String timelines[] = { "22-26 Oct", "19-04 April", "20-04 May", "21-09 October" };
+    int totalPrice[] = { 680, 230, 120, 340 };
     public static ArrayList<Tour> tours = new ArrayList<Tour>();
     ListView tourListView;
 
@@ -41,7 +48,8 @@ public class TourScreenActivity extends AppCompatActivity {
 
         for (int i = 0 ; i < tourTitles.length; i++) {
             String id = Integer.toString(i);
-            Tour tour = new Tour(id, tourTitles[i], tourImages[i]);
+            //    public Tour(String id, String name, int image, String timeline, int totalPrice) {
+            Tour tour = new Tour(id, tourTitles[i], tourImages[i], timelines[i], totalPrice[i]);
             tours.add(tour);
         }
     }
@@ -64,6 +72,4 @@ public class TourScreenActivity extends AppCompatActivity {
             }
         });
     }
-
-
 }

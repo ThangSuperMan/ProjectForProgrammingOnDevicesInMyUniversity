@@ -21,7 +21,7 @@ public class DetailTourActivity extends AppCompatActivity {
     private void getSelectedTour() {
         Intent previousIntent = getIntent();
         String parsedStringID = previousIntent.getStringExtra("id");
-        selectedTour = TourScreenActivity.tours.get(Integer.parseInt(parsedStringID));
+        selectedTour = TourActivity.tours.get(Integer.parseInt(parsedStringID));
     }
 
     private void setValues() {

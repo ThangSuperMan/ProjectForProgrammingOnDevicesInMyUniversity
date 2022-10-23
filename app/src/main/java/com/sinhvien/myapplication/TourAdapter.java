@@ -27,11 +27,15 @@ public class TourAdapter extends ArrayAdapter<Tour> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.tour_cell, parent, false);
         }
 
-        TextView tv = (TextView) convertView.findViewById(R.id.tour_name);
-        ImageView iv = (ImageView) convertView.findViewById(R.id.tour_image);
+        TextView name = (TextView) convertView.findViewById(R.id.tour_name);
+        TextView timeline = (TextView) convertView.findViewById(R.id.time_line_text_view);
+        TextView totalPrice = (TextView) convertView.findViewById(R.id.price_text_view);
+        ImageView image = (ImageView) convertView.findViewById(R.id.tour_image);
 
-        tv.setText(tour.getName());
-        iv.setImageResource(tour.getImage());
+        name.setText(tour.getName());
+        timeline.setText(tour.getTimeline());
+        totalPrice.setText(String.valueOf(tour.getTotalPrice()));
+        image.setImageResource(tour.getImage());
 
         return convertView;
     }

@@ -4,14 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TourActivity">
-
-<!--    <ListView-->
-<!--        android:divider="#f00000"-->
-<!--        android:id="@+id/toursListView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:backgroundTint="@color/teal_700"-->
-<!--        />-->
+    tools:context=".LoginActivity"
+    tools:ignore="MissingDefaultResource">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
