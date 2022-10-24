@@ -15,7 +15,7 @@ public class WishlistsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wishlists);
+//        setContentView(R.layout.activity_wishlists);
         // Hidden action bar
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
@@ -37,6 +37,11 @@ public class WishlistsActivity extends AppCompatActivity {
                     startActivity(new Intent(getApplicationContext(), WishlistsActivity.class));
                     overridePendingTransition(0, 0);
                     Toast.makeText(this, "Wishlists", Toast.LENGTH_SHORT).show();
+                    return true;
+                case R.id.menu_item_login:
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    overridePendingTransition(0, 0);
+                    Toast.makeText(this, "Login", Toast.LENGTH_SHORT).show();
                     return true;
             }
 

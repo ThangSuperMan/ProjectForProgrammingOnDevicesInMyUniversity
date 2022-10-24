@@ -1,36 +1,22 @@
 package com.sinhvien.myapplication;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.sinhvien.myapplication.databinding.ActivityMainBinding;
 
-public class LoginActivity extends AppCompatActivity {
+public class AboutActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    Button loginBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_about);
 
-        // Hidden action bar
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
-
-        loginBtn = (Button) findViewById(R.id.loginButton);
-        loginBtn.setOnClickListener((View v) -> {
-            Toast.makeText(this, "Login", Toast.LENGTH_SHORT).show();
-        });
-
+        // New
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.menu_item_login);
         bottomNavigationView.setOnItemSelectedListener((item) -> {

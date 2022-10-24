@@ -14,6 +14,7 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -50,6 +51,7 @@ public class TourActivity extends AppCompatActivity {
             String id = Integer.toString(i);
             //    public Tour(String id, String name, int image, String timeline, int totalPrice) {
             Tour tour = new Tour(id, tourTitles[i], tourImages[i], timelines[i], totalPrice[i]);
+
             tours.add(tour);
         }
     }
@@ -65,9 +67,12 @@ public class TourActivity extends AppCompatActivity {
         tourListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Toast.makeText(TourActivity.this, "onItemClick", Toast.LENGTH_SHORT).show();
                 Tour selectedTour = (Tour) (tourListView.getItemAtPosition(position));
                 Intent showDetailIntent = new Intent(getApplicationContext(), DetailTourActivity.class);
+                Toast.makeText(TourActivity.this, "selectedTour.getId(): " + selectedTour.getId(), Toast.LENGTH_SHORT).show();
                 showDetailIntent.putExtra("id", selectedTour.getId());
+//                Toast.makeText(TourActivity.this, "id: " + showDetailIntent.getStringExtra("id"), Toast.LENGTH_SHORT).show();
                 startActivity(showDetailIntent);
             }
         });
