@@ -17,9 +17,9 @@
         android:title="Trips"
         />
     <item
-        android:id="@+id/menu_item_inbox"
-        android:icon="@drawable/ic_baseline_chat_bubble_outline_24"
-        android:title="Inbox"
+        android:id="@+id/menu_item_admin"
+        android:icon="@drawable/ic_baseline_admin_panel_settings_24"
+        android:title="Admin"
         />
     <item
         android:id="@+id/menu_item_login"

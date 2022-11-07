@@ -43,6 +43,10 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(new Intent(getApplicationContext(), WishlistsActivity.class));
                     overridePendingTransition(0, 0);
                     return true;
+                case R.id.menu_item_admin:
+                    startActivity(new Intent(getApplicationContext(), AdminActivity.class));
+                    overridePendingTransition(0, 0);
+                    return true;
                 case R.id.menu_item_login:
                     return true;
             }
