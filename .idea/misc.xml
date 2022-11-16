@@ -43,6 +43,7 @@
         <entry key="app/src/main/res/layout/activity_tour_screen.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_welcome_screen.xml" value="0.22546943702134004" />
         <entry key="app/src/main/res/layout/activity_wishlists.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/admin_management_tour_cell.xml" value="0.19894561767578128" />
         <entry key="app/src/main/res/layout/fragment_explore.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_favorite.xml" value="0.11629667003027246" />
         <entry key="app/src/main/res/layout/fragment_inbox.xml" value="0.1" />

@@ -18,20 +18,20 @@ import java.util.List;
 interface InterfaceTourDao {
     public ArrayList<Tour> getAll();
     public boolean insert(Tour tour);
-    public void getTourById(String id);
+    public Tour getTourById(String id);
 }
 
-public class TourDAO {
+public class TourDAO implements InterfaceTourDao {
     DBHelper helper;
 
     public TourDAO(Context context) {
         helper = new DBHelper(context);
     }
 
-    @SuppressLint("Range")
-    public ArrayList<Tour> getTour(String sql, String...selectArgs) {
-        Log.d("get_tour", "getTour is being executed!");
-        ArrayList<Tour> tours = new ArrayList<>();
+//    @SuppressLint("Range")
+//    public ArrayList<Tour> getTour(String sql, String...selectArgs) {
+//        Log.d("get_tour", "getTour is being executed!");
+//        ArrayList<Tour> tours = new ArrayList<>();
 //        SQLiteDatabase db = helper.getWritableDatabase();
 //        Cursor cursor = db.rawQuery(sql, selectArgs);
 
@@ -47,9 +47,10 @@ public class TourDAO {
 //            tours.add(tour);
 //        }
 //
-        return tours;
-    }
+//        return tours;
+//    }
 
+    @Override
     @SuppressLint("Range")
     public Tour getTourById(String tourId) {
         Log.d("get_tour_by_id", "getTourById is being executed!");
@@ -81,6 +82,7 @@ public class TourDAO {
         return tour;
     }
 
+    @Override
     @SuppressLint("Range")
     public ArrayList<Tour> getAll() {
         Log.d("get_all", "getAll is being executed!");
@@ -114,7 +116,9 @@ public class TourDAO {
         return list;
     }
 
+    @Override
     public boolean insert(Tour tour) {
+        String priceString = String.valueOf(tour.getPrice());
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("tour_id", tour.getId());
@@ -122,6 +126,7 @@ public class TourDAO {
         values.put("body", tour.getBody());
         values.put("timeline", tour.getTimeline());
         values.put("image", tour.getImage());
+        values.put("price", tour.getPrice());
         long row = db.insert("tours", null, values);
         Log.d("row", "row value: " + row);
         return (row > 0);

@@ -34,6 +34,7 @@ public class AdminActivity extends AppCompatActivity {
     // UI Components
     BottomNavigationView bottomNavigationView;
     ListView manageToursListView;
+    Button addTourButton;
 //    Button chooseImageButton;
 //    ImageView uploadImageView;
 
@@ -90,12 +91,18 @@ public class AdminActivity extends AppCompatActivity {
             return false;
         });
 
-//        addEventListeners();
+        addEventListeners();
     }
 
 
     // Functions
     private void addEventListeners() {
+        addTourButton = (Button) findViewById(R.id.add_tour_button);
+        addTourButton.setOnClickListener((View v) -> {
+            Toast.makeText(this, "Just click the button", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getApplicationContext(), TourInsertActivity.class));
+        });
+
 //        chooseImageButton = (Button) findViewById(R.id.choose_image_upload_button);
 //        chooseImageButton.setOnClickListener((View v) -> {
 //            Toast.makeText(this, "Just click the button", Toast.LENGTH_SHORT).show();

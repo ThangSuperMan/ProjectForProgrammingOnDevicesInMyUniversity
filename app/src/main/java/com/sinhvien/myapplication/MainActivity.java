@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     TourDAO tourDao;
 
-    // Life Cyccles
+    // Life Cycles
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -81,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
 
 //        setupData();
         setUpList();
-//        copyFileDBFromAssetFolder();
         setUpOnClickListener();
     }
 
@@ -136,15 +135,8 @@ public class MainActivity extends AppCompatActivity {
 
     // Functions
     private void setupData() {
-
         tours = tourDao.getAll();
     }
-
-//    public Tour getById(String id) {
-//        String sql = "select * from tours where tour_id = ?";
-//        ArrayList<Tour> list = get(sql, id);
-//        return list.get(0);
-//    }
 
     private void setUpList() {
         tourListView = (ListView) findViewById(R.id.toursListView);
