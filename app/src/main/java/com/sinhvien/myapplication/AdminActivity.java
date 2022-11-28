@@ -1,28 +1,18 @@
 package com.sinhvien.myapplication;
 
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.ActivityResultRegistry;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.sinhvien.myapplication.classes.Tour;
-import com.sinhvien.myapplication.databinding.ActivityMainBinding;
-import com.sinhvien.myapplication.sqlite.DBHelper;
+import com.sinhvien.myapplication.schemas.Tour;
 import com.sinhvien.myapplication.sqlite.TourDAO;
 
 import java.util.ArrayList;
@@ -93,7 +83,6 @@ public class AdminActivity extends AppCompatActivity {
 
         addEventListeners();
     }
-
 
     // Functions
     private void addEventListeners() {

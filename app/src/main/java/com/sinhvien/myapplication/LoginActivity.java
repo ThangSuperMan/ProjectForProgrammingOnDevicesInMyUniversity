@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -16,6 +17,7 @@ public class LoginActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     Button loginBtn;
+    TextView signUpText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,12 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn = (Button) findViewById(R.id.loginButton);
         loginBtn.setOnClickListener((View v) -> {
             Toast.makeText(this, "Login", Toast.LENGTH_SHORT).show();
+        });
+
+        signUpText = (TextView)findViewById(R.id.signupText);
+        signUpText.setOnClickListener((View v) -> {
+            Toast.makeText(this, "signUpTExt", Toast.LENGTH_SHORT).show();
+             startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
         });
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);

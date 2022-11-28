@@ -37,9 +37,16 @@
                 android:text="Title"/>
             <EditText
                 android:id="@+id/title_edit_text"
-                android:hint="Title"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="50dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/ic_baseline_create_24"
+                android:drawablePadding="8dp"
+                android:hint="Title"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="8dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -55,9 +62,16 @@
                 android:text="Content"/>
             <EditText
                 android:id="@+id/content_edit_text"
-                android:hint="Content"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="50dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/ic_baseline_content_paste_24"
+                android:drawablePadding="8dp"
+                android:hint="Content   "
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="8dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -73,9 +87,16 @@
                 android:text="Timeline"/>
             <EditText
                 android:id="@+id/timeline_edit_text"
-                android:hint="Timeline"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="50dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/ic_baseline_access_time_24"
+                android:drawablePadding="8dp"
+                android:hint="Timeline  "
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="8dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -91,9 +112,16 @@
                 android:text="Price"/>
             <EditText
                 android:id="@+id/price_edit_text"
-                android:hint="Price"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="50dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/ic_baseline_outlined_flag_24"
+                android:drawablePadding="8dp"
+                android:hint="Price   "
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="8dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -109,9 +137,16 @@
                 android:text="Image"/>
             <EditText
                 android:id="@+id/image_edit_text"
-                android:hint="Image upload"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="50dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/ic_baseline_image_24"
+                android:drawablePadding="8dp"
+                android:hint="Image upload   "
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="8dp"/>
         </LinearLayout>
 
         <LinearLayout

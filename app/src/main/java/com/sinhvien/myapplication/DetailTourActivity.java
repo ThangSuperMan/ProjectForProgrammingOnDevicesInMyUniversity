@@ -4,12 +4,11 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.sinhvien.myapplication.classes.Tour;
+import com.sinhvien.myapplication.schemas.Tour;
 import com.sinhvien.myapplication.sqlite.TourDAO;
 
 import java.util.ArrayList;

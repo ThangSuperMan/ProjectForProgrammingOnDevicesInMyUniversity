@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.sinhvien.myapplication.classes.Tour;
+import com.sinhvien.myapplication.schemas.Tour;
 
 import java.util.List;
 

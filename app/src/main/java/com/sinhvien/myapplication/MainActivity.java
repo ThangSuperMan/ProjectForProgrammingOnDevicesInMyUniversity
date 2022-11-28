@@ -2,24 +2,13 @@ package com.sinhvien.myapplication;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ListView;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.sinhvien.myapplication.classes.Tour;
-import com.sinhvien.myapplication.sqlite.DBHelper;
+import com.sinhvien.myapplication.schemas.Tour;
 import com.sinhvien.myapplication.sqlite.TourDAO;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -78,8 +67,6 @@ public class MainActivity extends AppCompatActivity {
            return false;
         });
 
-
-//        setupData();
         setUpList();
         setUpOnClickListener();
     }
@@ -92,45 +79,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-    }
-
-    private void copyFileDBFromAssetFolder() {
-        File dbFile = getDatabasePath(dbName);
-        if (!dbFile.exists()) {
-            copyDatabase();
-        } else {
-            dbFile.delete();
-            copyDatabase();
-        }
-    }
-
-    private void copyDatabase() {
-        // Interact with files we have to use try catch
-        try {
-            // Read the data from the assets folder
-            InputStream myInput = getAssets().open(dbName);
-
-            // Location of destination file
-            String outFileName = getApplicationInfo().dataDir + dbPath + dbName;
-
-            File file = new File(getApplicationInfo().dataDir + dbPath);
-            if (!file.exists()) {
-                file.mkdir();
-            }
-
-            // Write data to the file
-            OutputStream myOutPut = new FileOutputStream(outFileName);
-            byte[] buffer = new byte[1024];
-            int len;
-
-            while ((len = myInput.read(buffer)) > 0) {
-                myOutPut.write(buffer, 0, len);
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.e("Error copy file", e.toString());
-        }
     }
 
     // Functions

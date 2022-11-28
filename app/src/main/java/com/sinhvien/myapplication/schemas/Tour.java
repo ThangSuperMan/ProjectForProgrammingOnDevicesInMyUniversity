@@ -1,4 +1,4 @@
-package com.sinhvien.myapplication.classes;
+package com.sinhvien.myapplication.schemas;
 
 public class Tour {
     private String id;
