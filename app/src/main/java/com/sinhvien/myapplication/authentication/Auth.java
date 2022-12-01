@@ -1,8 +1,8 @@
 package com.sinhvien.myapplication.authentication;
 
 public class Auth {
-    private boolean isAdmin = false;
-    private boolean isUser = false;
+    public static boolean isAdmin = false;
+    public static boolean isUser = false;
 
     public Auth(){}
 

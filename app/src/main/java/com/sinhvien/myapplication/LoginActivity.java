@@ -7,17 +7,27 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.sinhvien.myapplication.authentication.Auth;
 import com.sinhvien.myapplication.databinding.ActivityMainBinding;
+import com.sinhvien.myapplication.schemas.User;
+import com.sinhvien.myapplication.sqlite.UserDAO;
 
 public class LoginActivity extends AppCompatActivity {
 
+    // Variables
+    UserDAO userDAO;
+
+    // UI Components
     BottomNavigationView bottomNavigationView;
     Button loginBtn;
     TextView signUpText;
+    EditText usernameEditText;
+    EditText passwordEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +38,21 @@ public class LoginActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+        // Init userDao
+        userDAO = new UserDAO(getApplicationContext());
+
+        usernameEditText = (EditText) findViewById(R.id.username_edit_text);
+        passwordEditText = (EditText) findViewById(R.id.password_edit_text);
         loginBtn = (Button) findViewById(R.id.loginButton);
         loginBtn.setOnClickListener((View v) -> {
             Toast.makeText(this, "Login", Toast.LENGTH_SHORT).show();
+            String username = usernameEditText.getText().toString();
+            String password = passwordEditText.getText().toString();
+            boolean inActiveUser = isUser(username, password);
+            if (inActiveUser) {
+                Auth.isUser = true;
+            }
+//            Toast.makeText(this, "info login include username: " + username + ", password: " + password, Toast.LENGTH_SHORT).show();
         });
 
         signUpText = (TextView)findViewById(R.id.signupText);
@@ -60,6 +82,18 @@ public class LoginActivity extends AppCompatActivity {
             }
             return false;
         });
+    }
 
+    // Functions
+    private boolean isUser(String username, String password) {
+        Toast.makeText(this, "isUser just being executed!", Toast.LENGTH_SHORT).show();
+        User user = new User();
+        // User from the db
+        user = userDAO.getUserByUsername(username);
+        Toast.makeText(this, "username: " + user.getUsername(), Toast.LENGTH_SHORT).show();
+        if (username.equals(user.getUsername()) && password.equals(user.getPassword())) {
+            return true;
+        }
+        return false;
     }
 }

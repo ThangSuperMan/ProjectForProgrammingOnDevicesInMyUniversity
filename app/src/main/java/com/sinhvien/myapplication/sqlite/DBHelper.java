@@ -34,16 +34,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(sql);
 
-        // Users table
-        sql = "create table if not exists users" +
-              "(" +
-              "user_id integer primary key autoincrement," +
-              "username text not null," +
-              "password text not null" +
-              ")";
-
-        sqLiteDatabase.execSQL(sql);
-
         // Coments table
         sql = "create table if not exists comments" +
                 "(" +
@@ -58,11 +48,13 @@ public class DBHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(sql);
 
+        // Users table
         sql = "create table if not exists users" +
                 "(" +
                 "user_id integer primary key autoincrement," +
                 "username text not null," +
-                "password text not null" +
+                "password text not null," +
+                "avatar_image blob" +
                 ")";
 
         sqLiteDatabase.execSQL(sql);

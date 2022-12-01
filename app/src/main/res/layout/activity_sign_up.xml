@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignUpActivity">
@@ -73,6 +74,32 @@
                     android:textColor="@color/black"
                     android:textColorHighlight="@color/cardview_dark_background"
                     android:layout_marginTop="20dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="Select the avatar image" />
+                    <ImageView
+                        android:id="@+id/avatar_image_view"
+                        android:layout_marginTop="8dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_baseline_access_time_24"
+                        />
+                   <Button
+                       android:id="@+id/choose_image_button"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:backgroundTint="@color/primary_color"
+                       android:text="Open gallery" />
+
+                </LinearLayout>
+
                 <Button
                     android:id="@+id/signup_button"
                     android:layout_width="match_parent"

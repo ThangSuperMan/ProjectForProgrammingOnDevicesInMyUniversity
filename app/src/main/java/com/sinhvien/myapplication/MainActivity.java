@@ -6,7 +6,10 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.sinhvien.myapplication.authentication.Auth;
 import com.sinhvien.myapplication.schemas.Tour;
 import com.sinhvien.myapplication.sqlite.TourDAO;
 import java.util.ArrayList;
@@ -15,10 +18,10 @@ public class MainActivity extends AppCompatActivity {
 
     // Variables
     // Hard code
-    String tourTitles[] = { "Vaala, Finland", "Enonkoski, Finland", "Calaca, Philippin", "Canada Dream"};
-    int tourImages[] = { R.drawable.tour1, R.drawable.tour2, R.drawable.tour3, R.drawable.tour4 };
-    String timelines[] = { "22-26 Oct", "19-04 April", "20-04 May", "21-09 October" };
-    int totalPrice[] = { 680, 230, 120, 340 };
+//    String tourTitles[] = { "Vaala, Finland", "Enonkoski, Finland", "Calaca, Philippin", "Canada Dream"};
+//    int tourImages[] = { R.drawable.tour1, R.drawable.tour2, R.drawable.tour3, R.drawable.tour4 };
+//    String timelines[] = { "22-26 Oct", "19-04 April", "20-04 May", "21-09 October" };
+//    int totalPrice[] = { 680, 230, 120, 340 };
     ArrayList<Tour> tours = new ArrayList<Tour>();
     ListView tourListView;
 
@@ -55,14 +58,22 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(getApplicationContext(), WishlistsActivity.class));
                     overridePendingTransition(0, 0);
                     return true;
-                case R.id.menu_item_login:
-                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                    overridePendingTransition(0, 0);
-                    return true;
                 case R.id.menu_item_admin:
                     startActivity(new Intent(getApplicationContext(), AdminActivity.class));
                     overridePendingTransition(0, 0);
                     return true;
+                case R.id.menu_item_login:
+                    Toast.makeText(this, "Login item clicked", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Aut.isUser" + Auth.isUser, Toast.LENGTH_SHORT).show();
+                    if (Auth.isUser) {
+                        // Go to user's profile
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        overridePendingTransition(0, 0);
+                    } else {
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    }
             }
            return false;
         });
