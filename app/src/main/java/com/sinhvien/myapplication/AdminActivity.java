@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.sinhvien.myapplication.authentication.Auth;
 import com.sinhvien.myapplication.schemas.Tour;
 import com.sinhvien.myapplication.sqlite.TourDAO;
 
@@ -70,8 +71,12 @@ public class AdminActivity extends AppCompatActivity {
                     overridePendingTransition(0, 0);
                     return true;
                 case R.id.menu_item_login:
-                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                    overridePendingTransition(0, 0);
+//                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+//                    overridePendingTransition(0, 0);
+                    // New
+                    Intent intentProfile = new Intent(getApplicationContext(), ProfileActivity.class);
+                    intentProfile.putExtra("username", Auth.user.getUsername());
+                    startActivity(intentProfile);
                     return true;
                 case R.id.menu_item_admin:
                     startActivity(new Intent(getApplicationContext(), AdminActivity.class));

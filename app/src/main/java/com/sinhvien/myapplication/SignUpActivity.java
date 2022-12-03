@@ -117,7 +117,7 @@ public class SignUpActivity extends AppCompatActivity {
                         byte[] inputData = Utils.getBytes(iStream);
                         user.setAvatarImage(inputData);
                         if(userDAO.insert(user)) {
-                            Toast.makeText(this, "Add user successfully!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "Signup successfully!", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                             overridePendingTransition(0, 0);
                         } else {

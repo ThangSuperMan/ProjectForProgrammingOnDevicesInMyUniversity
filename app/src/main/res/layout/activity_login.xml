@@ -36,7 +36,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/primary_color"/>
                 <EditText
-                    android:id="@+id/username_edit_text"
+                    android:id="@+id/username"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@drawable/custom_edittext"

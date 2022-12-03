@@ -1,8 +1,11 @@
 package com.sinhvien.myapplication.authentication;
 
+import com.sinhvien.myapplication.schemas.User;
+
 public class Auth {
     public static boolean isAdmin = false;
     public static boolean isUser = false;
+    public static User user = new User();
 
     public Auth(){}
 

@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/background_splashscreen.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/bg_gradient_profile_bottom_rounded.xml" value="0.117" />
         <entry key="app/src/main/res/drawable/button.xml" value="0.1575" />
         <entry key="app/src/main/res/drawable/button_explore_nearby_stays.xml" value="0.209" />
         <entry key="app/src/main/res/drawable/button_login.xml" value="0.1" />
@@ -27,6 +28,7 @@
         <entry key="app/src/main/res/drawable/search_button.xml" value="0.148" />
         <entry key="app/src/main/res/drawable/shape_profile_panel.xml" value="0.117" />
         <entry key="app/src/main/res/drawable/tour_image_cell_rounded.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/white_background.xml" value="0.14786700439453132" />
         <entry key="app/src/main/res/layout/activity_.xml" value="0.22146739130434784" />
         <entry key="app/src/main/res/layout/activity_about.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_admin.xml" value="0.2798628609410444" />
@@ -38,8 +40,8 @@
         <entry key="app/src/main/res/layout/activity_login_screen.xml" value="0.2835396808126698" />
         <entry key="app/src/main/res/layout/activity_mactivity.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2913787841796875" />
-        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.17908935546875002" />
-        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.34849700927734384" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.22564935064935066" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.31549835205078136" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.21322715869848274" />
         <entry key="app/src/main/res/layout/activity_tour_insert.xml" value="0.1" />
@@ -54,8 +56,10 @@
         <entry key="app/src/main/res/layout/fragment_trips.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_wishlists.xml" value="0.1" />
         <entry key="app/src/main/res/layout/frame_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/layout_dialog_change_password.xml" value="0.2500325520833333" />
         <entry key="app/src/main/res/layout/layout_rounded_search_button.xml" value="0.22554347826086957" />
         <entry key="app/src/main/res/layout/tour_cell.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/white_background.xml" value="0.2171875" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
       </map>
     </option>

@@ -80,8 +80,6 @@ public class UserDAO {
         return list;
     }
 
-
-
     @SuppressLint("Range")
     public User getUserByUsername(String usernameParams) {
         String sql = "select * from users where username=?";
@@ -95,11 +93,13 @@ public class UserDAO {
             String id = cursor.getString(cursor.getColumnIndex("user_id"));
             String username = cursor.getString(cursor.getColumnIndex("username"));
             String password = cursor.getString(cursor.getColumnIndex("password"));
+            byte[] avatarImage = cursor.getBlob(cursor.getColumnIndex("avatar_image"));
             Log.d("data", "id: " + id + ", username: " + username + ", password: " + password);
 
             user.setId(id);
             user.setUsername(username);
             user.setPassword(password);
+            user.setAvatarImage(avatarImage);
         }
 
         return user;

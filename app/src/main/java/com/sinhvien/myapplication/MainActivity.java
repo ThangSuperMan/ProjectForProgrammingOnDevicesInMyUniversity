@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     // UI Components
     BottomNavigationView bottomNavigationView;
 
+    // DB
     TourDAO tourDao;
 
     // Life Cycles
@@ -52,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.menu_item_explore);
 
+
+
         bottomNavigationView.setOnItemSelectedListener((item) -> {
             switch (item.getItemId()) {
                 case R.id.menu_item_wishlists:
@@ -63,12 +66,16 @@ public class MainActivity extends AppCompatActivity {
                     overridePendingTransition(0, 0);
                     return true;
                 case R.id.menu_item_login:
-                    Toast.makeText(this, "Login item clicked", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(this, "Aut.isUser" + Auth.isUser, Toast.LENGTH_SHORT).show();
                     if (Auth.isUser) {
+                        // New
+                        Intent intentProfile = new Intent(getApplicationContext(), ProfileActivity.class);
+                        intentProfile.putExtra("username", Auth.user.getUsername());
+                        startActivity(intentProfile);
+
+                        // Old
                         // Go to user's profile
-                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-                        overridePendingTransition(0, 0);
+//                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+//                        overridePendingTransition(0, 0);
                     } else {
                         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                         overridePendingTransition(0, 0);
