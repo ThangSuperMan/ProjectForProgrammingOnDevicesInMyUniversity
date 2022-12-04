@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/background_splashscreen.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_gradient_profile_bottom_rounded.xml" value="0.117" />
+        <entry key="app/src/main/res/drawable/box_show_profile_menu.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/button.xml" value="0.1575" />
         <entry key="app/src/main/res/drawable/button_explore_nearby_stays.xml" value="0.209" />
         <entry key="app/src/main/res/drawable/button_login.xml" value="0.1" />
@@ -40,7 +41,7 @@
         <entry key="app/src/main/res/layout/activity_login_screen.xml" value="0.2835396808126698" />
         <entry key="app/src/main/res/layout/activity_mactivity.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2913787841796875" />
-        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.22564935064935066" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.31549835205078136" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.21322715869848274" />
@@ -49,6 +50,7 @@
         <entry key="app/src/main/res/layout/activity_welcome_screen.xml" value="0.22546943702134004" />
         <entry key="app/src/main/res/layout/activity_wishlists.xml" value="0.1" />
         <entry key="app/src/main/res/layout/admin_management_tour_cell.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/bos_shadow_profile_menu.xml" value="0.2171875" />
         <entry key="app/src/main/res/layout/comment_cell.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/layout/fragment_explore.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_favorite.xml" value="0.11629667003027246" />

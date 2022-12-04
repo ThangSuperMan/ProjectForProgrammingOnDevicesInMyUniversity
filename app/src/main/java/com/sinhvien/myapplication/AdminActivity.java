@@ -74,9 +74,13 @@ public class AdminActivity extends AppCompatActivity {
 //                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
 //                    overridePendingTransition(0, 0);
                     // New
-                    Intent intentProfile = new Intent(getApplicationContext(), ProfileActivity.class);
-                    intentProfile.putExtra("username", Auth.user.getUsername());
-                    startActivity(intentProfile);
+                    if (Auth.isUser) {
+                        Intent intentProfile = new Intent(getApplicationContext(), ProfileActivity.class);
+                        intentProfile.putExtra("username", Auth.user.getUsername());
+                        startActivity(intentProfile);
+                    } else {
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    }
                     return true;
                 case R.id.menu_item_admin:
                     startActivity(new Intent(getApplicationContext(), AdminActivity.class));

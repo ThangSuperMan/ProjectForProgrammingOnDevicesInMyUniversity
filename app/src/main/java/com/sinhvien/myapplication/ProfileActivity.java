@@ -35,18 +35,14 @@ public class ProfileActivity extends AppCompatActivity {
     ImageView profileImageView;
     Button logoutButton;
 
-
     // DB
     UserDAO userDao;
-
 
     // Lifecycles
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
-        Toast.makeText(this, "onCreate: profile activity", Toast.LENGTH_SHORT).show();
 
         // Hidden action bar
         ActionBar actionBar = getSupportActionBar();
@@ -82,7 +78,6 @@ public class ProfileActivity extends AppCompatActivity {
             // Add the user info the the global scope
             Auth.user = user;
 
-            Toast.makeText(this, "user_id: " + user.getId() + ", username: " + user.getUsername() + ", password: " + user.getPassword(), Toast.LENGTH_SHORT).show();
             Bitmap avatarImageBitmap = Utils.getImage(Auth.user.getAvatarImage());
             // setDataForTheUI(user.getUsername(), avatarImageBitmap );
              setDataForTheUI(Auth.user.getUsername(), avatarImageBitmap);
@@ -128,9 +123,6 @@ public class ProfileActivity extends AppCompatActivity {
         PopupWindow window = new PopupWindow(this);
         int marginLeft = 20;
         int marginRight = 20;
-        // window.setWidth((WindowManager.LayoutParams.MATCH_PARENT - (marginLeft + marginRight)));
-//      window.setHeight(WindowManager.LayoutParams.WRAP_CONTENT);
-//        window.setWidth(200);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
