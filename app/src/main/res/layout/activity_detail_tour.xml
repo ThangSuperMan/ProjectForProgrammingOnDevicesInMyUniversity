@@ -21,7 +21,6 @@
             />
     </androidx.cardview.widget.CardView>
 
-
     <LinearLayout
         android:layout_marginTop="320dp"
         android:layout_width="match_parent"
@@ -54,30 +53,38 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:drawableLeft="@drawable/ic_baseline_star_24"
-        android:drawablePadding="4sp"
-        />
+        android:drawablePadding="4sp" />
+
     <TextView
         android:id="@+id/bodyTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:scrollbars="vertical"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="8dp"
         android:textSize="14sp"
         android:fontFamily="@font/poppins_medium"
-        android:text="Descrtiption"/>
+        android:text="Descrtiption" />
 
-        <ListView
-            android:id="@+id/commentsListView"
-            android:divider="#FFFFFF"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/primary_color"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="@color/teal_700"
-            android:layout_marginBottom="58dp"
-            />
+    <ListView
+        android:id="@+id/comments_list_view"
+        android:divider="#FFFFFF"
+        android:background="@drawable/custom_listview_comments_shape"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="12dp" />
 
+    <Button
+        android:id="@+id/add_comment_button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="add comment"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/primary_color"
+        app:cornerRadius = "20dp"/>
 
     </LinearLayout>
 

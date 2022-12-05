@@ -18,7 +18,6 @@ import java.util.List;
 
 public class TourAdapter extends ArrayAdapter<Tour> {
     private static Context context;
-    private String dbName;
 
     public TourAdapter(Context context, int resource, List<Tour> tours) {
         super(context, resource, tours);

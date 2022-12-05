@@ -3,41 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-<!--    <LinearLayout-->
-<!--        android:id="@+id/layoutSearch"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:layout_marginEnd="16dp"-->
-<!--        android:paddingRight="12dp"-->
-<!--        android:paddingLeft="12dp"-->
-<!--        android:paddingStart="16dp"-->
-<!--        android:paddingTop="12dp"-->
-<!--        android:paddingBottom="12dp"-->
-<!--        android:background="@drawable/layout_button_search_rounded"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/toursListView"-->
-<!--        android:orientation="horizontal">-->
-
-<!--        <androidx.appcompat.widget.AppCompatImageView-->
-<!--            android:layout_width="22dp"-->
-<!--            android:layout_height="22dp"-->
-<!--            android:src="@drawable/ic_baseline_search_24"-->
-<!--            android:tint="@color/black" />-->
-
-<!--        <EditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_marginStart="8dp"-->
-<!--            android:background="@null"-->
-<!--            android:hint="Search"-->
-<!--            android:inputType="text"-->
-<!--            />-->
-
-<!--    </LinearLayout>-->
+    android:layout_height="match_parent" tools:context=".MainActivity">
 
         <ListView
             android:id="@+id/toursListView"

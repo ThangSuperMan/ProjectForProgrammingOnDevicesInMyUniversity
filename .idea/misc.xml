@@ -8,10 +8,16 @@
         <entry key="app/src/main/res/drawable/bg_gradient_profile_bottom_rounded.xml" value="0.117" />
         <entry key="app/src/main/res/drawable/box_show_profile_menu.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/button.xml" value="0.1575" />
+        <entry key="app/src/main/res/drawable/button_change_password_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/button_explore_nearby_stays.xml" value="0.209" />
         <entry key="app/src/main/res/drawable/button_login.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/button_where_are_you_going.xml" value="0.143" />
+        <entry key="app/src/main/res/drawable/change_password_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/custom_edittext.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/custom_listview_comments_shape.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/diaglog_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/dialog_background.xml" value="0.112" />
+        <entry key="app/src/main/res/drawable/empty_tall_divider.xml" value="0.144" />
         <entry key="app/src/main/res/drawable/ic_baseline_airplane_ticket_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_chat_bubble_outline_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.1" />
@@ -35,9 +41,9 @@
         <entry key="app/src/main/res/layout/activity_admin.xml" value="0.2798628609410444" />
         <entry key="app/src/main/res/layout/activity_admin_dashboard.xml" value="0.16983695652173914" />
         <entry key="app/src/main/res/layout/activity_amin.xml" value="0.18297101449275363" />
-        <entry key="app/src/main/res/layout/activity_detail_tour.xml" value="0.24302215576171876" />
+        <entry key="app/src/main/res/layout/activity_detail_tour.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_home_screen.xml" value="0.3046051025390626" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2760040283203125" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.3235638921453693" />
         <entry key="app/src/main/res/layout/activity_login_screen.xml" value="0.2835396808126698" />
         <entry key="app/src/main/res/layout/activity_mactivity.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2913787841796875" />
@@ -51,16 +57,20 @@
         <entry key="app/src/main/res/layout/activity_wishlists.xml" value="0.1" />
         <entry key="app/src/main/res/layout/admin_management_tour_cell.xml" value="0.1" />
         <entry key="app/src/main/res/layout/bos_shadow_profile_menu.xml" value="0.2171875" />
-        <entry key="app/src/main/res/layout/comment_cell.xml" value="0.21822916666666667" />
+        <entry key="app/src/main/res/layout/change_password_dialog.xml" value="0.40408477783203123" />
+        <entry key="app/src/main/res/layout/comment_cell.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_explore.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_favorite.xml" value="0.11629667003027246" />
         <entry key="app/src/main/res/layout/fragment_inbox.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_trips.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_wishlists.xml" value="0.1" />
         <entry key="app/src/main/res/layout/frame_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/layout_add_comment.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/layout_change_password_diaglog.xml" value="0.5903305053710938" />
+        <entry key="app/src/main/res/layout/layout_chnage_password_diaglog.xml" value="0.3641304347826087" />
         <entry key="app/src/main/res/layout/layout_dialog_change_password.xml" value="0.2500325520833333" />
         <entry key="app/src/main/res/layout/layout_rounded_search_button.xml" value="0.22554347826086957" />
-        <entry key="app/src/main/res/layout/tour_cell.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/tour_cell.xml" value="0.36825256347656254" />
         <entry key="app/src/main/res/layout/white_background.xml" value="0.2171875" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
       </map>

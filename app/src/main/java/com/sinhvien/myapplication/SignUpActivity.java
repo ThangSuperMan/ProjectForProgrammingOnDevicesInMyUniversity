@@ -13,7 +13,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
+import com.sinhvien.myapplication.authentication.Auth;
 import com.sinhvien.myapplication.schemas.User;
 import com.sinhvien.myapplication.sqlite.UserDAO;
 import com.sinhvien.myapplication.utils.Utils;
@@ -36,6 +38,7 @@ public class SignUpActivity extends AppCompatActivity {
     ImageView avatarImageView;
     Button chooseImageButton;
     ConstraintLayout layoutContainer;
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +59,43 @@ public class SignUpActivity extends AppCompatActivity {
         signUpButton = (Button)findViewById(R.id.signup_button);
 
         setUpOnClickListener();
+
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.menu_item_login);
+
+        bottomNavigationView.setOnItemSelectedListener((item) -> {
+            switch (item.getItemId()) {
+                case R.id.menu_item_explore:
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                case R.id.menu_item_wishlists:
+                    startActivity(new Intent(getApplicationContext(), WishlistsActivity.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                case R.id.menu_item_admin:
+                    startActivity(new Intent(getApplicationContext(), AdminActivity.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                case R.id.menu_item_login:
+                    if (Auth.isUser) {
+                        // New
+                        Intent intentProfile = new Intent(getApplicationContext(), ProfileActivity.class);
+                        intentProfile.putExtra("username", Auth.user.getUsername());
+                        startActivity(intentProfile);
+
+                        // Old
+                        // Go to user's profile
+//                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+//                        overridePendingTransition(0, 0);
+                    } else {
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    }
+            }
+            return false;
+        });
     }
 
     private void showMessage(String message) {

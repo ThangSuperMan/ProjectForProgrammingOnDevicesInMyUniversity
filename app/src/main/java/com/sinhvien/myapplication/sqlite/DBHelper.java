@@ -34,14 +34,14 @@ public class DBHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(sql);
 
-        // Coments table
+        // Comments table
         sql = "create table if not exists comments" +
                 "(" +
-                "comment integer primary key autoincrement," +
+                "comment_id integer primary key autoincrement," +
                 "body text not null," +
                 "created_at text not null," +
-                "user_id integer," +
-                "tour_id integer," +
+                "user_id integer not null," +
+                "tour_id integer not null," +
                 "foreign key (user_id) references users(user_id)," +
                 "foreign key (tour_id) references users(tour_id)" +
                 ")";
@@ -76,6 +76,12 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(sql);
         sql = "insert into users (username, password) values ('ngoc', 'ngoc123')";
         sqLiteDatabase.execSQL(sql);
+
+        // Insert data from comments table
+//        sql = "insert into comments(body, created_at, tour_id, user_id) values ('Cool tour', 'Today', 1, 1)";
+//        sqLiteDatabase.execSQL(sql);
+//        sql = "insert into comments(body, created_at, tour_id, user_id) values ('Cool haha', 'Today', 1, 2)";
+//        sqLiteDatabase.execSQL(sql);
     }
 
     @Override

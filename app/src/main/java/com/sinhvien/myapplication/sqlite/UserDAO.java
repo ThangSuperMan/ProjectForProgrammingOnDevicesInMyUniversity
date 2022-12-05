@@ -46,7 +46,7 @@ public class UserDAO {
 //    }
 
     public void retreiveImageFromDB(String userId ) {
-        SQLiteDatabase db = helper  .getWritableDatabase();
+        SQLiteDatabase db = helper.getWritableDatabase();
         String sql = "select * from users where user_id=?";
         Cursor cursor = db.rawQuery(sql, new String[]{userId});
     }
@@ -78,6 +78,31 @@ public class UserDAO {
         db.close();
         cursor.close();
         return list;
+    }
+
+    @SuppressLint("Range")
+    public User getUserById(String userId) {
+        String sql = "select * from users where user_id=?";
+        User user = new User();
+        // Connect to the database
+        // Create the db file and allow using CRUD operators
+        SQLiteDatabase db = helper.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(sql, new String[] {userId});
+        if (cursor.moveToNext()) {
+            String id = cursor.getString(cursor.getColumnIndex("user_id"));
+            String username = cursor.getString(cursor.getColumnIndex("username"));
+            String password = cursor.getString(cursor.getColumnIndex("password"));
+            byte[] avatarImage = cursor.getBlob(cursor.getColumnIndex("avatar_image"));
+            Log.d("data", "id: " + id + ", username: " + username + ", password: " + password);
+
+            user.setId(id);
+            user.setUsername(username);
+            user.setPassword(password);
+            user.setAvatarImage(avatarImage);
+        }
+
+        return user;
     }
 
     @SuppressLint("Range")

@@ -1,15 +1,19 @@
 package com.sinhvien.myapplication;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
-import android.view.WindowManager;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -25,7 +29,7 @@ import com.sinhvien.myapplication.utils.Utils;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    // Varibles
+    // Variables
     User user;
 
     // UI Components
@@ -56,7 +60,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         changePasswordTextView.setOnClickListener((View) -> {
             Toast.makeText(this, "changePasswordTextView just called", Toast.LENGTH_SHORT).show();
-            showPopup();
+            handleChangePasswordDialog();
         });
 
         logoutButton.setOnClickListener((View) -> {
@@ -87,7 +91,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.menu_item_login);
-
         bottomNavigationView.setOnItemSelectedListener((item) -> {
             switch (item.getItemId()) {
                 case R.id.menu_item_explore:
@@ -119,32 +122,17 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     // Functions
-    private void showPopup() {
-        PopupWindow window = new PopupWindow(this);
-        int marginLeft = 20;
-        int marginRight = 20;
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-
-        int screenH = displayMetrics.heightPixels;
-        int screenW = displayMetrics.widthPixels;
-        int xPosition = 20;
-        Toast.makeText(this, "screenH: " + screenH, Toast.LENGTH_SHORT).show();
-        // 2208
-        window.setHeight(screenH / 4);
-        window.setWidth(screenW - (marginLeft + marginRight));
-
-        window.setTouchable(true);
-        window.setFocusable(true);
-
-        EditText text = new EditText(this);
-        Button button = new Button(this);
-        text.setText("Touch it, it doesn't crash");
-        text.setTextColor(Color.WHITE);
-
-        window.setContentView(text);
-        window.setContentView(button);
-        window.showAtLocation(text, Gravity.CENTER, 0, 0);
+    private void handleChangePasswordDialog() {
+        Toast.makeText(this, "handleChangePasswordDialog is being executed!", Toast.LENGTH_SHORT).show();
+        AlertDialog.Builder builder = new AlertDialog.Builder(ProfileActivity.this);
+        View view = LayoutInflater.from(ProfileActivity.this).inflate(
+            R.layout.layout_change_password_diaglog, (ConstraintLayout)findViewById(R.id.layout_dialog_container)
+        );
+        builder.setView(view);
+        final AlertDialog alertDialog = builder.create();
+        // Make the background of alert dialog transparent
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable((Color.TRANSPARENT)));
+        alertDialog.show();
     }
 
     private void setDataForTheUI(String username, Bitmap avatarImage) {

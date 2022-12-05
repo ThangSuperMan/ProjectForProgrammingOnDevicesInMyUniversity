@@ -53,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.menu_item_explore);
 
-
-
         bottomNavigationView.setOnItemSelectedListener((item) -> {
             switch (item.getItemId()) {
                 case R.id.menu_item_wishlists:
@@ -100,10 +98,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Functions
-    private void setupData() {
-        tours = tourDao.getAll();
-    }
-
     private void setUpList() {
         tourListView = (ListView) findViewById(R.id.toursListView);
         TourAdapter tourAdapter = new TourAdapter(getApplicationContext(), 0, tours);
