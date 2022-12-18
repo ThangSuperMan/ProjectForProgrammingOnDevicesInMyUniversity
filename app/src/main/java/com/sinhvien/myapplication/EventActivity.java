@@ -2,47 +2,44 @@ package com.sinhvien.myapplication;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.sinhvien.myapplication.authentication.Auth;
-import com.sinhvien.myapplication.schemas.Tour;
-import com.sinhvien.myapplication.sqlite.TourDAO;
+import com.sinhvien.myapplication.schemas.Event;
+
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class EventActivity extends AppCompatActivity {
 
     // Variables
-    ArrayList<Tour> tours = new ArrayList<Tour>();
+    ArrayList<Event> events = new ArrayList<Event>();
 
     // UI Components
     BottomNavigationView bottomNavigationView;
-    ListView tourListView;
+    ListView eventListView;
 
-    // DB
-    TourDAO tourDao;
-
-    // Life Cycles
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_event);
 
         // Hidden action bar
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        tourDao = new TourDAO(MainActivity.this);
-        tours = tourDao.getAll();
-
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.menu_item_explore);
+        bottomNavigationView.setSelectedItemId(R.id.menu_item_events);
 
         bottomNavigationView.setOnItemSelectedListener((item) -> {
             switch (item.getItemId()) {
+                case R.id.menu_item_explore:
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    overridePendingTransition(0, 0);
+                    return true;
                 case R.id.menu_item_wishlists:
                     startActivity(new Intent(getApplicationContext(), WishlistsActivity.class));
                     overridePendingTransition(0, 0);
@@ -52,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
                     overridePendingTransition(0, 0);
                     return true;
                 case R.id.menu_item_events:
-                    startActivity(new Intent(getApplicationContext(), EventActivity.class));
-                    overridePendingTransition(0, 0);
                     return true;
                 case R.id.menu_item_login:
                     if (Auth.isUser) {
@@ -61,38 +56,22 @@ public class MainActivity extends AppCompatActivity {
                         Intent intentProfile = new Intent(getApplicationContext(), ProfileActivity.class);
                         intentProfile.putExtra("username", Auth.user.getUsername());
                         startActivity(intentProfile);
-
-                        // Old
-                        // Go to user's profile
-//                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-//                        overridePendingTransition(0, 0);
                     } else {
                         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
                     }
             }
-           return false;
+            return false;
         });
 
         setUpList();
-        setUpOnClickListener();
     }
 
     // Functions
     private void setUpList() {
-        tourListView = (ListView) findViewById(R.id.toursListView);
-        TourAdapter tourAdapter = new TourAdapter(getApplicationContext(), 0, tours);
-        tourListView.setAdapter(tourAdapter);
-    }
-
-    private void setUpOnClickListener() {
-        tourListView.setOnItemClickListener((adapterView, view, position, l) -> {
-            Tour selectedTour = (Tour) (tourListView.getItemAtPosition(position));
-            Intent showDetailIntent = new Intent(getApplicationContext(), DetailTourActivity.class);
-            showDetailIntent.putExtra("id", selectedTour.getId());
-            startActivity(showDetailIntent);
-            overridePendingTransition(0, 0);
-        });
+        eventListView = (ListView) findViewById(R.id.eventsListView);
+        EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), 0, events);
+        eventListView.setAdapter(eventAdapter);
     }
 }

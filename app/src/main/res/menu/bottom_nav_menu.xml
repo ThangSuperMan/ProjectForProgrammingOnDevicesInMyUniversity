@@ -12,9 +12,9 @@
         android:title="Wishlists"
         />
     <item
-        android:id="@+id/menu_item_trips"
+        android:id="@+id/menu_item_events"
         android:icon="@drawable/ic_baseline_airplane_ticket_24"
-        android:title="Trips"
+        android:title="Events"
         />
     <item
         android:id="@+id/menu_item_admin"

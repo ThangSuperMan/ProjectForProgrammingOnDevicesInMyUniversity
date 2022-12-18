@@ -41,11 +41,6 @@ public class DetailTourActivity extends AppCompatActivity {
     ListView commentListView;
     CommentAdapter tourAdapter;
 
-    String tourTitles[] = { "Vaala, Finland", "Enonkoski, Finland", "Calaca, Philippin", "Canada Dream"};
-    // int tourImages[] = { R.drawable.tour1, R.drawable.tour2, R.drawable.tour3, R.drawable.tour4 };
-    String tourImages[] = { "tour1", "tour2", "tour3", "tour4" };
-    String timelines[] = { "22-26 Oct", "19-04 April", "20-04 May", "21-09 October" };
-    int totalPrice[] = { 680, 230, 120, 340 };
     public static ArrayList<Tour> tours = new ArrayList<Tour>();
     Comment comment = new Comment();
 
@@ -59,7 +54,6 @@ public class DetailTourActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_tour);
-
 
         // Hidden action bar
         ActionBar actionBar = getSupportActionBar();
@@ -92,29 +86,32 @@ public class DetailTourActivity extends AppCompatActivity {
         tourAdapter = new CommentAdapter (getApplicationContext(), 0, comments);
 
         // Combine more props for comment schema
-        for (int i = 0; i < comments.size(); i++) {
-//            Toast.makeText(this, "user id: " + comments.get(i).getUserId(), Toast.LENGTH_SHORT).show();
-            String userId = comments.get(i).getUserId();
-            User user = new User();
-            user = userDao.getUserById(userId);
-            Toast.makeText(this, "user_id: " + user.getId() + ", username: " + user.getUsername(), Toast.LENGTH_SHORT).show();
-            comments.get(i).setUsername(user.getUsername());
-            comments.get(i).setImage(user.getAvatarImage());
-        }
+        combineEssentialPropsForCommentSchema();
 
         setValues();
         setUpList();
     }
 
     // Functions
+    private void combineEssentialPropsForCommentSchema() {
+        Toast.makeText(this, "combineEssentialPropsForCommentSchema is just begin executed!", Toast.LENGTH_SHORT).show();
+        for (int i = 0; i < comments.size(); i++) {
+            String userId = comments.get(i).getUserId();
+            User user = new User();
+            user = userDao.getUserById(userId);
+            comments.get(i).setUsername(user.getUsername());
+            comments.get(i).setImage(user.getAvatarImage());
+        }
+    }
+
     private void setUpList() {
         commentListView = (ListView) findViewById(R.id.comments_list_view);
-//        CommentAdapter tourAdapter = new CommentAdapter (getApplicationContext(), 0, comments);
         commentListView.setAdapter(tourAdapter);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void handleAddComment() {
+        Toast.makeText(this, "handleAddComment", Toast.LENGTH_SHORT).show();
         AlertDialog.Builder builder = new AlertDialog.Builder(DetailTourActivity.this);
         View view = LayoutInflater.from(DetailTourActivity.this).inflate(
                 R.layout.layout_add_comment, (ConstraintLayout)findViewById(R.id.layout_dialog_comment_container)
@@ -136,16 +133,22 @@ public class DetailTourActivity extends AppCompatActivity {
                 String userId;
                 // Whole own this comment
                 userId = Auth.user.getId();
+
                 // Get content would like to insert
                 String currentUsername = comment.getUsername();
                 if (commentDao.insert(comment, userId, selectedTourId)) {
+
                     // Refresh the listview data change
                     comments.clear();
                     comments = commentDao.getAllByTourId(selectedTourId);
-//                    tourAdapter = new CommentAdapter (getApplicationContext(), 0, comments);
+                    combineEssentialPropsForCommentSchema();
+
+                    for (int i = 0; i < comments.size(); i++) {
+                        Toast.makeText(this, "body of comment: " + comments.get(i).getBody(), Toast.LENGTH_SHORT).show();
+                    }
+
                     tourAdapter.addAll(comments);
                     tourAdapter.notifyDataSetChanged();
-//                    commentListView.setAdapter(tourAdapter);
                     alertDialog.hide();
 
                     Toast.makeText(this, "Add comment successfully!", Toast.LENGTH_SHORT).show();
@@ -178,19 +181,5 @@ public class DetailTourActivity extends AppCompatActivity {
         descriptionTextView.setText(tour.getBody());
         int resourceID = getApplication().getResources().getIdentifier(tour.getImage(), "drawable",getApplication().getPackageName());
         imageView.setImageResource(resourceID);
-    }
-
-    // Life cycles
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Toast.makeText(this, "onPause detail tour", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Toast.makeText(this, "onResume detail tour", Toast.LENGTH_SHORT).show();
     }
 }
